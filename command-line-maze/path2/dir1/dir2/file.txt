@@ -1,0 +1,12 @@
+FLAG! 
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.Just curious if someone who does a lot of CTFs tried to find a flag. This isn't the solution. 
