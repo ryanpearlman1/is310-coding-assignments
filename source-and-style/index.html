@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first webpage!</title>
+    <meta name="author" content="Ryan"/>
+</head>
+<body>
+    <h2>Welcome!</h2>
+    <h2><a href="https://www.instagram.com/p/C0mo-TCvOCe/?igsh=MTJydGtoODRzMTJ5dA%3D%3D&img_index=1">Introduction to me! (Instagram Video)</a></h2>
+
+    <h3>About Me</h3>
+    <p>Hello! I am a student at the iSchool. I love social media and learning new things.</p>
+
+    <p> Some fun facts about me:</p>
+    <ul>
+        <li>I'm studying Information Sciences + Data Sciences with a minor in Advertising.</li> 
+        <li>I love Social Media!</li>
+        <li>I am making this website for a class! (IS310, definitely recommend!) </li>
+    </ul>
+
+    <div class="testimonials" id="typingeffect" style="padding: 20px; background: #e0e0e0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h3>What People Say</h3>
+        <blockquote style="background: #fff; padding: 15px; margin: 10px 0; border-left: 5px solid #007BFF; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-style: italic;">
+            <p id="testimonialText"></p>
+        </blockquote>
+    </div>
+    
+    <button id="changeColorButton" style="margin: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Change Background Color</button>
+    
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+    
+        document.getElementById('changeColorButton').addEventListener('click', changeBackgroundColor);
+    
+        const testimonials = [
+            '"This is the best webpage ever!" - Literally everyone',
+            '"Ryan is a great person, amazing friend, and phenomenal student." - Me',
+            '"I simply have never laid my eyes upon something so beatiful such as this website." - Probably you right now',
+            '"Okay. Really? It is so obvious you had ChatGPT make this entire thing for you" - All the CS majors in my life',
+            '"It was GitHub CoPilot! And I wrote a good amount of it! And, I am supposed to use it! Stop judging." - I plead the fifth if that was me or not'
+        ];
+        let testimonialIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+    
+        function typeEffect() {
+            const currentTestimonial = testimonials[testimonialIndex];
+            const displayText = isDeleting ? currentTestimonial.substring(0, charIndex--) : currentTestimonial.substring(0, charIndex++);
+    
+            document.getElementById("testimonialText").innerHTML = displayText;
+    
+            if (!isDeleting && charIndex === currentTestimonial.length) {
+                setTimeout(() => isDeleting = true, 100);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+            }
+    
+            setTimeout(typeEffect, isDeleting ? 20 : 30);
+        }
+    
+        window.onload = typeEffect;
+    </script>
+
+</body>
+</html>
