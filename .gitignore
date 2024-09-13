@@ -1,3 +1,2 @@
 *.DS_Store
-command-line-maze/*
-!command-line-maze/.README.md
+command-maze-folder-unzipped/*
