@@ -61,7 +61,7 @@
             document.getElementById("testimonialText").innerHTML = displayText;
     
             if (!isDeleting && charIndex === currentTestimonial.length) {
-                setTimeout(() => isDeleting = true, 100);
+                setTimeout(() => isDeleting = true, 400);
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 testimonialIndex = (testimonialIndex + 1) % testimonials.length;
