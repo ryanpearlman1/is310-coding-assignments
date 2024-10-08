@@ -8,7 +8,7 @@ favorite_movies = [
     {
         "name": "Cold Pursuit",
         "release_year": 2019,
-        "sequels": ["The Exchange: After The Firm"]
+        "sequels": ["none"]
     },
     {
         "name": "Die Hard",
