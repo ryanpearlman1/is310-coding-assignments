@@ -1,4 +1,6 @@
 *.DS_Store
 command-maze-folder-unzipped/*
-is310-env/
-Fav_Movies_html.html
+fav_movies_html.html
+web_scraping_assignments/Top 100 | Project Gutenberg.html
+web_scraping_assignments/first_web_scraping.py
+first_api_script.py

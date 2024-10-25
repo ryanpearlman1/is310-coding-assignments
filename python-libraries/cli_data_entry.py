@@ -66,8 +66,8 @@ def is_correct_func():
         is_correct = console.input(f"\nIs all of that correct? Type [bold purple]y[/] if yes, or [bold purple]n[/] if you would like to restart the data input process: ")
         if (is_correct.lower() == "y"):
             console.print("Awesome! Saving file to your computer...")
-            console.save_html("Fav_Movies_html.html")
-            path = os.path.abspath("Fav_Movies_html.html")
+            console.save_html("fav_movies_html.html")
+            path = os.path.relpath("fav_movies_html.html")
             console.print(f'File saved to: {path}')
             restart = True
             break
